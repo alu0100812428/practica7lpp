@@ -66,5 +66,28 @@ describe Menu do
     expect(@dieta.hidratos).to eq(47)
   end
   
+  #Pruebas de metodos
+  it "Existe un metodo para obtener el titulo del menu" do
+    expect(@dieta.get_titulo).to eq("ALMUERZO")
+  end
+  
+  it "Existe un metodo para el porcentaje de la ingesta diarias" do
+    expect(@dieta.get_porcentaje).to eq("(30 - 35%)")
+  end
+  
+  it "Existe un metodo para obtener la descripcion del menu" do
+    expect(@dieta.get_descripcion(4)).to eq("Pan de trigo integral")
+  end
+  
+  it "Existe un metodo para obtener un plato del menu" do
+    expect(@dieta.get_plato(0)).to eq("- Macarrones con salsa de tomate y queso parmesano, 1 1/2 cucharón, 200 g")
+  end
+  
+  it "Existe un metodo para obtener el conjunto de platos del menu" do
+    expect(@dieta.get_conjunto_platos).to eq("- Macarrones con salsa de tomate y queso parmesano, 1 1/2 cucharón, 200 g\n- Escalope de ternera, 1 bistec mediano, 100 g\n- Ensalada básica con zanahoria rallada, guarnición de 120 g\n- Mandarina, 1 grande, 180 g\n- Pan de trigo integral, 1 rodaja, 20 g")
+  end
+  
+  
+  
   
 end
