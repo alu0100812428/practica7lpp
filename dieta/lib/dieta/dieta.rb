@@ -112,4 +112,52 @@ class Menu
         @hidratos = hidratos
 
     end
+    
+    #Metodo para obtener el titulo
+    def get_titulo
+       "#{@titulo}" 
+    end
+    
+    #Metodo para obtener el porcentaje
+    def get_porcentaje
+       if @porcentaje.length==1
+           "(#{@porcentaje[0]}%)"
+       else
+           "(#{@porcentaje[0]} - #{@porcentaje[1]}%)"
+       end
+               
+    end
+    
+    #Metodo para obtener la descripcion del plato
+    def get_descripcion(num_plato)
+        if (num_plato<0)&&(num_plato>@platos)
+            raise "El plato no existe"
+        else
+            "#{@descripcion[num_plato]}"
+        end
+    end
+    
+    #Metodo para obtener un plato
+    def get_plato(num_plato)
+        if (num_plato<0)&&(num_plato>@platos)
+            raise "El plato no existe"
+        else
+            "- #{get_descripcion(num_plato)}, #{@porciones[num_plato]}, #{@ingesta[num_plato]} g"
+        end
+    end
+    
+    #Metodo para obtener el conjunto de platos
+    def get_conjunto_platos
+        i=0
+        cadena=""
+        while(i<@platos)
+            cadena=cadena+"#{get_plato(i)}"
+            if(i!=@platos-1)    #if para que no se añada \n en el ultimo plato
+                cadena=cadena+"\n"
+            end
+            i=i+1
+        end
+        cadena
+    end
+    
 end
