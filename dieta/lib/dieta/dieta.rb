@@ -1,6 +1,6 @@
 class Menu
-    attr_reader :titulo, :porcentaje, :descripcion, :porciones, :ingesta
-    def initialize(titulo,porcentaje,desc,porc,gramos)
+    attr_reader :titulo, :porcentaje, :descripcion, :porciones, :ingesta, :platos, :calorias,:proteinas,:grasas,:hidratos
+    def initialize(titulo,porcentaje,desc,porc,gramos,calorias,proteinas,grasas,hidratos)
         #Titulo
         regexp = /\s*(\w*)\s*(DESAYUNO|MEDIO MAÑANA|ALMUERZO|MERIENDA|CENA)\s*(\w*)\s*/
         resultado = regexp.match(titulo)
@@ -73,5 +73,43 @@ class Menu
         
         @ingesta = gramos
         
+        #Platos. Calculo del numero de platos y estructura correcta de sus datos
+        #platos,calorias,proteinas,grasas,hidratos
+        
+        @platos = @descripcion.length
+        if  @porciones.length != @platos
+            raise "Los datos de los platos estan incompletos"
+        elsif @ingesta.length != @platos
+            raise "Los datos de los platos estan incompletos"
+        end
+        
+        #Calorias
+        if !calorias.is_a?(Float)
+            raise "Las calorias deben ser de tipo flotante"
+        end
+        
+        @calorias = calorias
+        
+        #Proteinas
+        if !proteinas.is_a?(Integer)
+            raise "Las proteinas deben ser de tipo entero"
+        end
+        
+        @proteinas = proteinas
+        
+        #Grasas
+        if !grasas.is_a?(Integer)
+            raise "Las grasas deben ser de tipo entero"
+        end
+        
+        @grasas = grasas
+        
+        #Hidratos de carbono
+        if !hidratos.is_a?(Integer)
+            raise "Los hidratos deben ser de tipo entero"
+        end
+        
+        @hidratos = hidratos
+
     end
 end
