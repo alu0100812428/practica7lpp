@@ -19,7 +19,7 @@ describe Menu do
   end
   
   it "Debe existir el porcetaje que el menú representa de la ingesta diaria." do
-    expect(@dieta.porcetaje).to eq([30,35])
+    expect(@dieta.porcentaje).to eq([30,35])
   end
   
   it "Debe existir la descripción de un plato." do
