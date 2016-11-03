@@ -7,7 +7,7 @@ describe Menu do
   desc=["Macarrones con salsa de tomate y queso parmesano","Escalope de ternera","Ensalada básica con zanahoria rallada","Mandarina","Pan de trigo integral"]
   porc=["1 1/2 cucharón","1 bistec mediano","guarnición","1 grande","1 rodaja"]
   gramos=[200,100,120,180,20]
-  @dieta=Menu.new("ALMUERZO",[30,35],desc,porc,gramos)
+  @dieta=Menu.new("ALMUERZO",[30,35],desc,porc,gramos,785.9,19,34,47)
  end
  
   it "Debe existir la clase Dieta" do
@@ -45,5 +45,26 @@ describe Menu do
     expect(@dieta.ingesta[3]).to eq(180)
     expect(@dieta.ingesta[4]).to eq(20)
   end
+  
+  it "Debe existir un conjunto de platos." do
+    expect(@dieta.platos).to eq(5)
+  end
+  
+  it "Debe existir un Valor Calórico Total (V.C.T) del conjunto de platos expresado en Kilocalorías." do
+    expect(@dieta.calorias).to eq(785.9)
+  end
+  
+  it "Debe existir el porcentaje de proteínas de un conjunto de platos." do
+    expect(@dieta.proteinas).to eq(19)
+  end
+  
+  it "Debe existir el porcentaje de grasas de un conjunto de platos." do
+    expect(@dieta.grasas).to eq(34)
+  end
+  
+  it "Debe existir el porcentaje de hidrados de carbono de un conjunto de platos." do
+    expect(@dieta.hidratos).to eq(47)
+  end
+  
   
 end
