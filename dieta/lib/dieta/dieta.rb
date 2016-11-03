@@ -160,4 +160,28 @@ class Menu
         cadena
     end
     
+    #Metodo para obterner el VCT
+    def get_vct
+       "#{@calorias} kcal" 
+    end
+    
+    #Metodo para obtener el porcentaje de proteinas
+    def get_proteinas
+       "#{@proteinas}%" 
+    end
+    
+    #Metodo para obtener el porcentaje de proteinas
+    def get_grasas
+       "#{@grasas}%" 
+    end
+    
+    #Metodo para obtener el porcentaje de proteinas
+    def get_hidratos
+       "#{@hidratos}%" 
+    end
+    
+    #Metodo para obtener el menu formateado
+    def to_s
+       "#{get_titulo} #{get_porcentaje}\n#{get_conjunto_platos}\nV.C.T. | % #{get_vct} | #{get_proteinas} - #{get_grasas} - #{get_hidratos}" 
+    end
 end

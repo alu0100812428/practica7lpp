@@ -88,7 +88,7 @@ describe Menu do
   end
   
   it "Existe un metodo para obtener el V.C.T." do
-    expect(@dieta.get_vct).to eq("785,9 kcal")
+    expect(@dieta.get_vct).to eq("785.9 kcal")
   end
   
   it "Existe un metodo para obtener el porcentaje de proteinas" do
@@ -96,15 +96,15 @@ describe Menu do
   end
   
   it "Existe un metodo para obtener el porcentaje de grasas" do
-    expect(@dieta.get_proteinas).to eq("34%")
+    expect(@dieta.get_grasas).to eq("34%")
   end
   
   it "Existe un metodo para obtener el porcentaje de hidratos de carbono" do
-    expect(@dieta.get_proteinas).to eq("47%")
+    expect(@dieta.get_hidratos).to eq("47%")
   end
   
   it "Existe un metodo para obtener el menu formateado" do
-    expect(@dieta.to_s).to eq("ALMUERZO (30 - 35%)\n- Macarrones con salsa de tomate y queso parmesano, 1 1/2 cucharón, 200 g\n- Escalope de ternera, 1 bistec mediano, 100 g\n- Ensalada básica con zanahoria rallada, guarnición, 120 g\n- Mandarina, 1 grande, 180 g\n- Pan de trigo integral, 1 rodaja, 20 g\nV.C.T. | % 785,9 kcal | 19% - 34% - 47%")
+    expect(@dieta.to_s).to eq("ALMUERZO (30 - 35%)\n- Macarrones con salsa de tomate y queso parmesano, 1 1/2 cucharón, 200 g\n- Escalope de ternera, 1 bistec mediano, 100 g\n- Ensalada básica con zanahoria rallada, guarnición, 120 g\n- Mandarina, 1 grande, 180 g\n- Pan de trigo integral, 1 rodaja, 20 g\nV.C.T. | % 785.9 kcal | 19% - 34% - 47%")
   end
   
   
