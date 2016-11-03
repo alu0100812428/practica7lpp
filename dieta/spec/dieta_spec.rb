@@ -4,7 +4,10 @@ require "dieta/dieta"
 describe Menu do
  
  before :each do
-  @dieta=Menu.new("ALMUERZO")
+  desc=["Macarrones con salsa de tomate y queso parmesano","Escalope de ternera","Ensalada básica con zanahoria rallada","Mandarina","Pan de trigo integral"]
+  porc=["1 1/2 cucharón","1 bistec mediano","guarnición","1 grande","1 rodaja"]
+  gramos=[200,100,120,180,20]
+  @dieta=Menu.new("ALMUERZO",[30,35],desc,porc,gramos)
  end
  
   it "Debe existir la clase Dieta" do
@@ -14,4 +17,33 @@ describe Menu do
   it "Debe existir un título para el menú" do
     expect(@dieta.titulo).to eq("ALMUERZO")
   end
+  
+  it "Debe existir el porcetaje que el menú representa de la ingesta diaria." do
+    expect(@dieta.porcetaje).to eq([30,35])
+  end
+  
+  it "Debe existir la descripción de un plato." do
+    expect(@dieta.descripcion[0]).to eq("Macarrones con salsa de tomate y queso parmesano")
+    expect(@dieta.descripcion[1]).to eq("Escalope de ternera")
+    expect(@dieta.descripcion[2]).to eq("Ensalada básica con zanahoria rallada")
+    expect(@dieta.descripcion[3]).to eq("Mandarina")
+    expect(@dieta.descripcion[4]).to eq("Pan de trigo integral")
+  end
+  
+  it "Debe existir la porción recomendada de un plato." do
+    expect(@dieta.porciones[0]).to eq("1 1/2 cucharón")
+    expect(@dieta.porciones[1]).to eq("1 bistec mediano")
+    expect(@dieta.porciones[2]).to eq("guarnición")
+    expect(@dieta.porciones[3]).to eq("1 grande")
+    expect(@dieta.porciones[4]).to eq("1 rodaja")
+  end
+  
+  it "Debe existir la ingesta en gramos de un plato." do
+    expect(@dieta.ingesta[0]).to eq(200)
+    expect(@dieta.ingesta[1]).to eq(100)
+    expect(@dieta.ingesta[2]).to eq(120)
+    expect(@dieta.ingesta[3]).to eq(180)
+    expect(@dieta.ingesta[4]).to eq(20)
+  end
+  
 end
